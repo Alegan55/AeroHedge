@@ -1,0 +1,2 @@
+/usr/bin/ar qc libaerohedge_core.a CMakeFiles/aerohedge_core.dir/src/memory_allocator.cpp.o
+/usr/bin/ranlib libaerohedge_core.a

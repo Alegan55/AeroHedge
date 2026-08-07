@@ -1,0 +1,28 @@
+services:
+  telemetry-gateway:
+    build: ./backend
+    container_name: aerohedge_gateway
+    ports:
+      - "3000:3000"
+      - "8080:8080/udp"
+    restart: always
+    environment:
+      - PYTHONUNBUFFERED=1
+      - DATABASE_URL=postgresql://postgres:postgres@db:5432/aerohedge
+    depends_on:
+      - db
+
+  db:
+    image: postgres:15-alpine
+    container_name: aerohedge_db
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=aerohedge
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
