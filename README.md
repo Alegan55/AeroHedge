@@ -1,3 +1,6 @@
+cd ~/Projects/AeroHedge
+
+cat << 'EOF' > README.md
 # AeroHedge 🚀
 
 > **High-Frequency Quantitative Risk Engine, Real-Time Delta Hedging, and Low-Latency Financial Architecture.**
@@ -15,10 +18,16 @@
 2. [Mathematical & Quantitative Foundations](#-mathematical--quantitative-foundations)
    * [Black-Scholes-Merton Option Pricing & Greeks](#black-scholes-merton-option-pricing--greeks)
    * [Dynamic Delta Hedging Mechanics](#dynamic-delta-hedging-mechanics)
-   * [Portfolio Net Exposure Evaluation](#portfolio-net-exposure-evaluation)
 3. [System Architecture & Low-Latency Pipeline](#-system-architecture--low-latency-pipeline)
 4. [Data Structures: Lock-Free Circular Buffers](#-data-structures-lock-free-circular-buffers)
-5. [Project Structure](#-project-structure)
+5. [Project Structure and Module Functionality](#-project-structure-and-module-functionality)
+   * [1. The Memory Skeleton: market_data.hpp](#1-the-memory-skeleton-market_datahpp)
+   * [2. Bypassing the Kernel Clock: time_utils.hpp](#2-bypassing-the-kernel-clock-time_utilshpp)
+   * [3. The Zero-Copy Catch: udp_listener.hpp](#3-the-zero-copy-catch-udp_listenerhpp)
+   * [4. The Lock-Free Highway: spsc_queue.hpp](#4-the-lock-free-highway-spsc_queuehpp)
+   * [5. The Math Engine: risk_engine.hpp](#5-the-math-engine-risk_enginehpp)
+   * [6. The Execution Gateway: order_gateway.hpp](#6-the-execution-gateway-order_gatewayhpp)
+   * [7. Overcoming the "Observer Effect": The Telemetry Pipeline](#7-overcoming-the-observer-effect-the-telemetry-pipeline)
 6. [License](#-license)
 
 ---
